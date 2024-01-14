@@ -1,0 +1,19 @@
+{% extends 'cook_up/base.html' %}
+
+{% block content %}
+<ul>
+{% for recipe in recipes %}
+<li><strong>chef:</strong> {{ recipe.creator }} - <strong>steps:</strong> {{ recipe.steps}}  -
+ 
+
+<form method="GET" action="{% url 'update-recipe' id=recipe.id %}">
+        <input type="submit" value="modifier">
+      </form>
+
+<form method="GET" action="{% url 'delete-recipe' id=recipe.id %}"><input type="submit" value="supprimer" /></form>
+{% endfor %}
+</ul>
+<a href="{%  url 'create-recipe'  %}">create recipe</a>
+
+
+{% endblock content %}

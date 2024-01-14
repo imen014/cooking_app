@@ -1,0 +1,16 @@
+{% extends 'authentication_app_management/base_design.html' %}
+
+ {% block content %}
+{{ message }}
+welcome {{ username}}
+password {{ password }}
+
+<form method="POST">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" />
+</form>
+<a href="{% url 'signup-user' %}">Signup</a>
+
+
+ {% endblock content %}

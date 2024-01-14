@@ -1,0 +1,15 @@
+{% extends 'cook_up/base.html' %}
+
+{% block content %}
+{{ message }}
+<form method="POST">
+{% csrf_token %}
+{{ recipe_form.as_p }}
+<input type="submit" class="btn btn-success" />
+</form>
+<a href="{% url 'get-recipes' %}">get recipes</a>
+
+
+
+{% endblock content %}
+

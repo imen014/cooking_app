@@ -1,0 +1,6 @@
+{% extends 'authentication_app_management/base_design.html' %}
+
+{% block content %}
+<a href="{% url 'logout-user' %}">logout</a><br/>
+<a href="{% url 'create-recipe' %}">create recipe</a>
+{% endblock content %}
